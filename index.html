@@ -297,6 +297,20 @@ Durante uno de sus viajes a Wolfborg castillo en Alemania, el Dr. Hongou fue emb
 </section>
 
 </main>
+    <script>
+    // Obtener el parámetro ?qr=
+    const urlParams = new URLSearchParams(window.location.search);
+    const codigoQR = urlParams.get('qr');
+
+    if (codigoQR) {
+        // Llamar al PHP automáticamente
+        fetch("marcar.php?qr=" + codigoQR)
+            .then(r => r.text())
+            .then(res => console.log(res));
+    }
+</script>
+
 </body>
 </html>
+
 
